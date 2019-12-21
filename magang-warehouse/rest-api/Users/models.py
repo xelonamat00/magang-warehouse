@@ -10,5 +10,8 @@ class CustomUserModel(models.Model):
     is_active = models.BooleanField(default=True)
     last_login = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.username
+
     class Meta:
         db_table = 'Users'
