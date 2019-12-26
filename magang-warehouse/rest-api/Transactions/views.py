@@ -1,12 +1,12 @@
 from rest_framework import viewsets
-from .models import InComingTransact, OutComingTransact
-from .serializers import InComingSerializers, OutComingSerializers
+from .models import Transactions
+from .serializers import TransactSerializers
 # Create your views here.
-class OutComingViewSet(viewsets.ModelViewSet):
+class TransactionsViewset(viewsets.ModelViewSet):
     # queryset = models.OutComingTransact.objects.select_related('id_item').select_related("user")
-    queryset = OutComingTransact.objects.all()
-    serializer_class = OutComingSerializers
+    queryset = Transactions.objects.all()
+    serializer_class = TransactSerializers
 
-class InComingViewSet(viewsets.ModelViewSet):
-    queryset = InComingTransact.objects.all()
-    serializer_class = InComingSerializers
+# class InComingViewSet(viewsets.ModelViewSet):
+#     queryset = InComingTransact.objects.all()
+#     serializer_class = InComingSerializers
